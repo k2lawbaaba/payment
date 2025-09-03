@@ -1,0 +1,9 @@
+node_modules
+dist
+coverege
+.env
+.envzcf
+backups
+app.log
+error.log
+db-backup-437009-4beb5d2f81b5.json
