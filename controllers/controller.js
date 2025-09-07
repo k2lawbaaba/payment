@@ -7,6 +7,7 @@ import https from "https";
 const payStack = {
   acceptPayment: async (req, res) => {
     try {
+      console.log(req);
       // request body from the clients
       const email = req.body.email;
       const amount = req.body.amount;
@@ -26,7 +27,7 @@ const payStack = {
           "Content-Type": "application/json",
         },
       };
-      console.log(`Email:${email}\nAmount:${amount}`);
+
       // client request to paystack API
 
       const paymentRequest = https

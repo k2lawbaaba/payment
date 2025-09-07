@@ -9,4 +9,3 @@ import bodyParser from "body-parser";
 router.post("/web/webhook", getWebhookEvent.webhookEvents);
 
 export default router;
-bodyParser.raw({ type: "*/*" });
