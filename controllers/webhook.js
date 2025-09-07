@@ -5,9 +5,10 @@ import crypto from "crypto";
 const webhooks = {
   webhookEvents: async (req, res) => {
     const secret = process.env.PAYSTACK_SECRET_KEY;
+
     const hash = crypto
       .createHmac("sha512", secret)
-      .update(JSON.stringify(req.body))
+      .update(req.rawBody || JSON.stringify(req.body))
       .digest("hex");
 
     if (hash == req.headers["x-paystack-signature"]) {
