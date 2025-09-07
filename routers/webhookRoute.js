@@ -6,6 +6,6 @@ const router = express.Router();
 import getWebhookEvent from "../controllers/webhook.js";
 import bodyParser from "body-parser";
 
-router.post("/web/webhook", getWebhookEvent.webhookEvents);
+router.post("/webhook", getWebhookEvent.webhookEvents);
 
 export default router;

@@ -12,8 +12,10 @@ const port = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 // Call the routers
 // app.use(express.json());
-app.use("/", bodyParser.raw({ type: "*/*" }), webhookRoute);
 app.use("/api", express.json(), router);
+
+// Webhook -> RAW body
+app.use("/web", bodyParser.raw({ type: "application/json" }), webhookRoute);
 
 // Start the server
 app.listen(port, () => {
